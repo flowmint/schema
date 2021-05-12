@@ -1,0 +1,89 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "key": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "icon": {
+            "type": "string"
+        },
+        "connectable": {
+            "type": "boolean"
+        },
+        "tags": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "config": {
+            "type": "object"
+        },
+        "modules": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "key": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type":"string"
+                    },
+                    "icon": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number",
+                        "oneOf": [
+                            {
+                                "const": 0
+                            },
+                            {
+                                "const": 1
+                            },
+                            {
+                                "const": 2
+                            }
+                        ]
+                    },
+                    "config": {
+                        "type": "object",
+                        "properties": {
+                            "query": {
+                                "type": "object"
+                            },
+                            "config": {
+                                "type": "object"
+                            },
+                            "output": {
+                                "type": "object"
+                            },
+                            "example": {
+                                "type": "object"
+                            }
+                        }
+                    },
+                    "scheme": {
+                        "type": "object"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "module": {
+            
+        }
+    }
+}
